@@ -1,36 +1,125 @@
+/* General App Styling */
 .App {
   text-align: center;
   padding: 20px;
+  font-family: 'Arial', sans-serif;
+  background-color: #f4f4f9;
 }
 
+h1 {
+  color: #333;
+  margin-bottom: 30px;
+}
+
+/* Job List Container */
 .job-list {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
+  gap: 20px;
+  margin-top: 20px;
 }
 
+/* Job Card Styling */
 .job-card {
   border: 1px solid #ccc;
-  padding: 10px;
+  padding: 20px;
   margin: 10px;
   width: 250px;
-  border-radius: 5px;
+  border-radius: 10px;
+  background-color: #fff;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
+/* Hover Effect for Job Card */
+.job-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+/* Job Title Styling */
 .job-card h3 {
-  font-size: 1.2rem;
+  font-size: 1.5rem;
+  color: #007bff;
+  margin-bottom: 10px;
 }
 
+/* Filter Section */
 .filter {
-  margin-bottom: 20px;
+  margin-bottom: 30px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .filter label {
-  display: block;
-  margin-top: 10px;
+  font-size: 1.1rem;
+  margin-bottom: 10px;
+  color: #333;
 }
 
 input[type="text"],
 select {
+  padding: 8px;
   margin: 5px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+  font-size: 1rem;
+  outline: none;
+  transition: border-color 0.3s ease;
+}
+
+/* Focus Effect on Inputs and Selects */
+input[type="text"]:focus,
+select:focus {
+  border-color: #007bff;
+}
+
+/* Button Styling for Interactivity */
+button {
+  padding: 10px 15px;
+  margin-top: 10px;
+  font-size: 1rem;
+  border-radius: 5px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+/* Hover Effect for Button */
+button:hover {
+  background-color: #0056b3;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .job-list {
+    justify-content: flex-start;
+  }
+
+  .job-card {
+    width: 100%;
+    max-width: 350px;
+  }
+}
+
+@media (max-width: 480px) {
+  .App {
+    padding: 15px;
+  }
+
+  .filter {
+    margin-bottom: 20px;
+  }
+
+  .job-card {
+    width: 100%;
+  }
+
+  button {
+    width: 100%;
+  }
 }
